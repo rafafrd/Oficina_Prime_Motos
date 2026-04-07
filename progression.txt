@@ -1,0 +1,46 @@
+PROGRESSAO — Site Pizzaria Bella Napoli
+========================================
+
+OBJETIVO
+- Criar um site one-page para uma pizzaria com HTML, CSS e JS separados, linkados, com favicon e Google Fonts.
+
+DECISOES DE DESIGN
+- Tema: italiano/rustico com paleta quente (vermelho #c0392b, laranja #e67e22, fundo creme #fdf6f0)
+- Tipografia: Playfair Display (title, serif — remete elegancia) + Inter (body, sans-serif — legibilidade)
+- Layout responsivo com CSS Grid e Flexbox
+
+POR QUE
+- One-page: simples, direto, bom para restaurantes que querem informar cardapio/contato rapido
+- Favicon externo (Flaticon): nao precisa hospedar arquivo local; usa https://cdn-icons-png.flaticon.com/...
+- Google Fonts: fontes premium gratuitas, carregadas via CDN com preconnect para performance
+- Imagens do Unsplash: gratuitas e de alta qualidade para demonstracao
+
+COMO — PASSO A PASSO
+1. index.html
+   - Meta tags (charset, viewport), title, favicon link, stylesheet link
+   - Google Fonts importados com preconnect no <head>
+   - Header fixo com logo + nav links + botao hamburger mobile
+   - Hero section: background image do Unsplash com overlay escuro, titulo, descricao, 2 botoes CTA
+   - Secao Cardapio: botoes de filtro (Todas/Tradicionais/Especiais/Doces) + grid de cards populado via JS
+   - Secao Sobre: texto + emoji circular + contadores animados
+   - Secao Contato: info (endereco, horario, telefone) + formulario com validacao HTML
+   - Footer simples
+   - Script linkado no final do body
+
+2. style.css
+   - Reset basico e variaveis CSS (:root) para facil manutencao
+   - Navbar: fixa, fica opaca com box-shadow ao fazer scroll
+   - Hero: full-viewport, flexbox centralizado, animacao fadeUp nos conteudos
+   - Pizza cards: grid responsivo (auto-fill minmax 280px), hover lift, fade-in animation
+   - Sobre: grid 2 colunas, counters em destaque
+   - Formulario: inputs com borda e focus state colorido
+   - Media query (max-width: 768px): menu hamburger slide-in, about/contact empilham
+
+3. script.js
+   - Array "pizzas" com 8 itens: nome, descricao, preco, categoria, imagem
+   - renderMenu(filter): filtra por categoria, gera cards com innerHTML, anexa "Pedir" com animacao
+   - Filtro: click nos botoes, troca de classe "active", re-renderiza
+   - Navbar scroll: toggle classe "scrolled" quando scrollY > 50
+   - Mobile menu: toggle hamburger + close ao clicar em link
+   - Formulario: preventDefault, mostra mensagem de sucesso, limpa apos 5s
+   - Counter animation: IntersectionObserver dispara quando #sobre entra em viewport
