@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oficina Prime Motos | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-layout">
+      <section class="auth-panel auth-hero">
+        <span class="eyebrow">Portal técnico premium</span>
+        <h1>Controle completo da oficina em um único painel operacional.</h1>
+        <p>
+          Agenda, ordens de serviço, aprovação do cliente, peças, histórico e
+          relatórios para a rotina interna da oficina especializada em motos.
+        </p>
+
+        <div class="hero-metrics">
+          <article class="metric-card">
+            <strong>7</strong>
+            <span>Status operacionais</span>
+          </article>
+          <article class="metric-card">
+            <strong>24h</strong>
+            <span>Visão centralizada</span>
+          </article>
+          <article class="metric-card">
+            <strong>MVC</strong>
+            <span>Base estruturada</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="auth-panel auth-card">
+        <div class="auth-brand">
+          <span class="brand-mark">OP</span>
+          <div>
+            <strong>Oficina Prime</strong>
+            <span>Agenda e solicitações</span>
+          </div>
+        </div>
+
+        <form id="loginForm" class="stack-lg" data-testid="login-form">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="username"
+              placeholder="cliente@oficina.local"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Digite sua senha"
+              required
+            />
+          </div>
+
+          <button id="loginButton" class="btn btn-primary btn-block" type="submit">
+            Entrar no sistema
+          </button>
+          <p id="loginFeedback" class="feedback-line"></p>
+        </form>
+
+        <div class="login-seeds">
+          <h2>Credenciais seed</h2>
+          <ul>
+            <li>Cliente: `cliente@oficina.local` / `Cliente@123`</li>
+            <li>Funcionário: `funcionario@oficina.local` / `Oficina@123`</li>
+            <li>Fornecedor: `fornecedor@oficina.local` / `Fornecedor@123`</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/js/auth.js"></script>
+  </body>
+</html>

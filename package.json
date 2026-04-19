@@ -1,0 +1,40 @@
+{
+  "name": "oficina-motos-mvc",
+  "version": "1.0.0",
+  "description": "Sistema web MVC para agenda e ordens de serviço de oficina de motos.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "db:reset": "node src/database/reset.js",
+    "db:reset:test:api": "cross-env SQLITE_DB_PATH=./src/database/test-api.db node src/database/reset.js",
+    "db:reset:test:e2e": "cross-env SQLITE_DB_PATH=./src/database/test-e2e.db node src/database/reset.js",
+    "start:test:e2e": "cross-env NODE_ENV=test SQLITE_DB_PATH=./src/database/test-e2e.db PORT=4173 node server.js",
+    "test": "npm run test:api && npm run test:e2e",
+    "test:api": "cross-env NODE_ENV=test SQLITE_DB_PATH=./src/database/test-api.db jest --runInBand",
+    "test:e2e": "cross-env NODE_ENV=test SQLITE_DB_PATH=./src/database/test-e2e.db playwright test"
+  },
+  "keywords": [
+    "express",
+    "sqlite",
+    "mvc",
+    "workshop",
+    "motorcycle"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "jspdf": "^3.0.3",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "cross-env": "^10.0.0",
+    "jest": "^30.0.5",
+    "supertest": "^7.1.1"
+  }
+}

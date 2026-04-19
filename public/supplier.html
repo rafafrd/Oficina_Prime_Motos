@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oficina Prime Motos | Fornecedor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-page="supplier">
+    <div class="app-shell">
+      <aside id="sidebar" class="sidebar"></aside>
+      <div class="shell-main">
+        <header id="topbar" class="topbar"></header>
+        <main class="page-content">
+          <section class="page-intro">
+            <span class="eyebrow">Portal do fornecedor</span>
+            <h1>Pedidos vinculados às ordens</h1>
+            <p>Consulte apenas as peças e ordens relacionadas ao seu fornecimento.</p>
+          </section>
+
+          <section id="supplierMetrics" class="grid metrics-grid"></section>
+
+          <section class="grid split-grid">
+            <article class="panel">
+              <div class="section-head">
+                <h2>Itens de catálogo</h2>
+              </div>
+              <div id="supplierParts"></div>
+            </article>
+
+            <article class="panel">
+              <div class="section-head">
+                <h2>Ordens relacionadas</h2>
+              </div>
+              <div id="supplierOrders"></div>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="/js/supplier.js"></script>
+  </body>
+</html>

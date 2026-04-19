@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oficina Prime Motos | Agenda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-page="appointments">
+    <div class="app-shell">
+      <aside id="sidebar" class="sidebar"></aside>
+      <div class="shell-main">
+        <header id="topbar" class="topbar"></header>
+        <main class="page-content">
+          <section class="page-intro">
+            <span class="eyebrow">Agenda operacional</span>
+            <h1>Atendimentos futuros</h1>
+            <p>Confirmação, reagendamento e visão centralizada da oficina.</p>
+          </section>
+
+          <section class="panel">
+            <div class="section-head">
+              <h2>Agenda integrada</h2>
+              <span class="subtle-label">Cliente e equipe na mesma linha do tempo</span>
+            </div>
+            <div id="appointmentsBoard"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="/js/appointments.js"></script>
+  </body>
+</html>

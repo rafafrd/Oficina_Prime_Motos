@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oficina Prime Motos | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="app-shell">
+      <aside id="sidebar" class="sidebar"></aside>
+      <div class="shell-main">
+        <header id="topbar" class="topbar"></header>
+        <main class="page-content">
+          <section class="page-intro">
+            <span class="eyebrow">Visão operacional</span>
+            <h1>Dashboard da oficina</h1>
+            <p>Indicadores, próximos atendimentos e ordens recentes.</p>
+          </section>
+
+          <section id="dashboardMetrics" class="grid metrics-grid"></section>
+
+          <section class="grid split-grid">
+            <article class="panel">
+              <div class="section-head">
+                <h2>Ordens recentes</h2>
+                <a class="text-link" href="/requests">Abrir ordens</a>
+              </div>
+              <div id="recentOrders"></div>
+            </article>
+
+            <article class="panel">
+              <div class="section-head">
+                <h2>Agenda futura</h2>
+                <a class="text-link" href="/appointments">Ver agenda</a>
+              </div>
+              <div id="upcomingAppointments"></div>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="/js/dashboard.js"></script>
+  </body>
+</html>

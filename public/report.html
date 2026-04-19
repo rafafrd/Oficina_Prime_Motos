@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oficina Prime Motos | Relatório</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-page="report">
+    <div class="app-shell">
+      <aside id="sidebar" class="sidebar"></aside>
+      <div class="shell-main">
+        <header id="topbar" class="topbar"></header>
+        <main class="page-content">
+          <section class="page-intro page-intro-inline">
+            <div>
+              <span class="eyebrow">Relatório da ordem</span>
+              <h1>Exportação técnica</h1>
+              <p>Visualização pronta para impressão e PDF client-side.</p>
+            </div>
+            <button id="generatePdfButton" class="btn btn-primary" data-testid="pdf-button">
+              Gerar PDF
+            </button>
+          </section>
+
+          <section id="reportContainer" class="panel report-surface"></section>
+        </main>
+      </div>
+    </div>
+
+    <script src="/vendor/jspdf.umd.min.js"></script>
+    <script type="module" src="/js/report.js"></script>
+  </body>
+</html>

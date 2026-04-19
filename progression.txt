@@ -1,46 +1,52 @@
-PROGRESSAO — Site Pizzaria Bella Napoli
+PROGRESSAO — Sistema Oficina Prime Motos
 ========================================
 
-OBJETIVO
-- Criar um site one-page para uma pizzaria com HTML, CSS e JS separados, linkados, com favicon e Google Fonts.
+ETAPA 1 — ANALISE DA BASE
+- Base original identificada como projeto estático sem back-end real.
+- Arquivos iniciais: `.gitignore`, `index.html`, `style.css`, `script.js`, `progression.txt`.
+- Decisão: preservar apenas a referência visual de tema escuro e reconstruir a aplicação em MVC.
 
-DECISOES DE DESIGN
-- Tema: italiano/rustico com paleta quente (vermelho #c0392b, laranja #e67e22, fundo creme #fdf6f0)
-- Tipografia: Playfair Display (title, serif — remete elegancia) + Inter (body, sans-serif — legibilidade)
-- Layout responsivo com CSS Grid e Flexbox
+ETAPA 2 — ARQUITETURA FINAL
+- Criação de `server.js` e `src/app.js`.
+- Definição clara de MVC com `controllers`, `models`, `routes`, `middlewares`, `services`, `utils`.
+- Front servido pelo Express com páginas protegidas por sessão.
+- HTMLs movidos para `public/` e assets separados por responsabilidade.
 
-POR QUE
-- One-page: simples, direto, bom para restaurantes que querem informar cardapio/contato rapido
-- Favicon externo (Flaticon): nao precisa hospedar arquivo local; usa https://cdn-icons-png.flaticon.com/...
-- Google Fonts: fontes premium gratuitas, carregadas via CDN com preconnect para performance
-- Imagens do Unsplash: gratuitas e de alta qualidade para demonstracao
+ETAPA 3 — BANCO SQLITE
+- Implementação de `src/schema.sql` com 12 tabelas.
+- Implementação de `src/seed.sql` com usuários seed para cliente, funcionário, admin e fornecedor.
+- Criação de inicialização automática do banco em `src/database/init.js`.
+- Inclusão de script `db:reset` e bancos isolados para testes.
 
-COMO — PASSO A PASSO
-1. index.html
-   - Meta tags (charset, viewport), title, favicon link, stylesheet link
-   - Google Fonts importados com preconnect no <head>
-   - Header fixo com logo + nav links + botao hamburger mobile
-   - Hero section: background image do Unsplash com overlay escuro, titulo, descricao, 2 botoes CTA
-   - Secao Cardapio: botoes de filtro (Todas/Tradicionais/Especiais/Doces) + grid de cards populado via JS
-   - Secao Sobre: texto + emoji circular + contadores animados
-   - Secao Contato: info (endereco, horario, telefone) + formulario com validacao HTML
-   - Footer simples
-   - Script linkado no final do body
+ETAPA 4 — AUTENTICACAO E AUTORIZACAO
+- Login com sessão usando `express-session`.
+- Hash de senha com `bcryptjs`.
+- Middleware de autenticação e autorização por papel.
+- Rotas protegidas para cliente, funcionário e fornecedor.
 
-2. style.css
-   - Reset basico e variaveis CSS (:root) para facil manutencao
-   - Navbar: fixa, fica opaca com box-shadow ao fazer scroll
-   - Hero: full-viewport, flexbox centralizado, animacao fadeUp nos conteudos
-   - Pizza cards: grid responsivo (auto-fill minmax 280px), hover lift, fade-in animation
-   - Sobre: grid 2 colunas, counters em destaque
-   - Formulario: inputs com borda e focus state colorido
-   - Media query (max-width: 768px): menu hamburger slide-in, about/contact empilham
+ETAPA 5 — MODULOS DE NEGOCIO
+- Ordens de serviço com fluxo obrigatório de status.
+- Histórico de atualizações.
+- Agenda integrada com reagendamento.
+- Gestão de peças, mão de obra, orçamento e total calculado.
+- Portal específico do fornecedor com recursos permitidos.
 
-3. script.js
-   - Array "pizzas" com 8 itens: nome, descricao, preco, categoria, imagem
-   - renderMenu(filter): filtra por categoria, gera cards com innerHTML, anexa "Pedir" com animacao
-   - Filtro: click nos botoes, troca de classe "active", re-renderiza
-   - Navbar scroll: toggle classe "scrolled" quando scrollY > 50
-   - Mobile menu: toggle hamburger + close ao clicar em link
-   - Formulario: preventDefault, mostra mensagem de sucesso, limpa apos 5s
-   - Counter animation: IntersectionObserver dispara quando #sobre entra em viewport
+ETAPA 6 — FRONT-END FUNCIONAL
+- Tela de login real.
+- Dashboard com métricas.
+- Página de ordens com timeline, histórico e formulários por papel.
+- Página de agenda.
+- Página do fornecedor.
+- Página de relatório com exportação PDF client-side.
+- UI refeita em modo escuro técnico com destaque laranja/coral.
+
+ETAPA 7 — TESTES AUTOMATIZADOS
+- API/login com Jest + Supertest.
+- Interface com Playwright.
+- Cobertura mínima exigida implementada para autenticação, ordens, histórico, cálculo, navegação e PDF.
+
+ETAPA 8 — DOCUMENTACAO E ENTREGA
+- README completo.
+- TESTES.md com roteiro prático.
+- `.gitignore` atualizado.
+- Projeto preparado para execução local com Node.js, Express e SQLite.
